@@ -1,0 +1,198 @@
+/* Estilos para la sección de cuenta */
+.account-settings {
+    background-color: #151A21;
+    padding: 3rem 0;
+}
+
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 2rem;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    color: #333;
+    margin-bottom: 2rem;
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: 300;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: #555;
+    font-weight: bold;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="number"] {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="tel"]:focus,
+input[type="number"]:focus {
+    border-color: #007bff;
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.25);
+}
+
+.radio-group {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+.radio-group input[type="radio"] {
+    margin-right: 0.5rem;
+}
+
+
+
+
+
+/* Estilos para campos deshabilitados */
+input:disabled {
+    background-color: #f8f9fa;
+    cursor: not-allowed;
+    opacity: 0.7;
+}
+
+button {
+    font-family: 'Arial', sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+    color: white;
+    background-color: #151A21;
+    border: 2px solid #151A21;
+    border-radius: 25px;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    outline: none;
+}
+
+button:hover {
+    background-color: white;
+    color: #151A21;
+}
+
+button:active {
+    background-color: #1f2a35;
+    border-color: #1f2a35;
+    color: white;
+}
+
+button#updateInfoBtn {
+    display: none;
+}
+
+button#discardChangesBtn {
+    display: none;
+}
+
+
+/* Estilos responsivos */
+@media (max-width: 768px) {
+    .container {
+        padding: 1.5rem;
+    }
+
+    h2 {
+        font-size: 2rem;
+    }
+
+    .btn {
+        padding: 0.6rem 1.2rem;
+        font-size: 0.9rem;
+    }
+
+    .button-group {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .btn {
+        width: 100%;
+    }
+}
+
+/* Estilos para el select */
+select {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1rem;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-color: #fff;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23333' d='M10.293 3.293L6 7.586 1.707 3.293A1 1 0 00.293 4.707l5 5a1 1 0 001.414 0l5-5a1 1 0 10-1.414-1.414z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 1rem center;
+    cursor: pointer;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+select:focus {
+    border-color: #007bff;
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.25);
+}
+
+select:disabled {
+    background-color: #f8f9fa;
+    cursor: not-allowed;
+    opacity: 0.7;
+}
+
+/* Estilos para opciones dentro del select */
+select option {
+    padding: 0.5rem;
+}
+
+/* Ajuste para navegadores que no soportan 'appearance: none' */
+select::-ms-expand {
+    display: none;
+}
+
+input[type="date"] {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    background-color: #fff;
+    color: #333;
+    cursor: pointer;
+}
+
+input[type="date"]:focus {
+    border-color: #007bff;
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.25);
+}
+
+input[type="date"]:disabled {
+    background-color: #f8f9fa;
+    cursor: not-allowed;
+    opacity: 0.7;
+}

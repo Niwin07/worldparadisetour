@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>World Paradise Tours - Ushuaia</title>
+    <link rel="stylesheet" href="../src/css/index.css" />
+    <script type="module" src="../js/Main.js" defer></script>
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+      integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+  </head>
+  <body>
+    <div id="content-wrap">
+      <header>
+        <nav class="navbar">
+          <div class="logo">
+            <h1>World Paradise Tours</h1>
+          </div>
+          
+          <ul class="nav-links">
+            <li><a href="/index.html">Inicio</a></li>
+            <li class="dropdown">
+              <a href="#" class="dropbtn">Explorar <i class="fas fa-chevron-down"></i></a>
+              <div class="dropdown-content">
+                <a href="/Destinos.html">Tours</a>
+                <a href="#section4">Destinos</a>
+                <a href="#">Paquetes</a>
+                <a href="#">Paquetes personalizados</a>
+              </div>
+            </li>
+            <li><a href="#section5">Contacto</a></li>
+            <li class="dropdown">
+              <a href="#" class="dropbtn">Mi cuenta <i class="fas fa-chevron-down"></i></a>
+              <div class="dropdown-content">
+                <a href="/cuenta.html">Mi perfil</a>
+                <a href="/solicitudes.html">Mis solicitudes</a>
+                <a href="#" onclick="logOut()">Cerrar Sesion</a>
+              </div>
+            </li>
+            <li class="dropdown">
+              <a href="#" class="dropbtn">Idioma <i class="fas fa-chevron-down"></i></a>
+              <div class="dropdown-content">
+                <a href="#" data-lang="es">Español</a>
+                <a href="#" data-lang="en">English</a>
+                <a href="#" data-lang="pt">Português</a>
+              </div>
+            </li>
+            <li>
+              <a href="/carrito.html" class="cart-icon">
+                <i class="fas fa-shopping-cart"></i>
+                <span class="cart-count">0</span>
+              </a>
+            </li>
+            <li class="dropdown">
+              <a href="#" class="dropbtn currency-btn">USD <i class="fas fa-chevron-down"></i></a>
+              <div class="dropdown-content">
+                <a href="#" class="currency-option" data-currency="USD">USD</a>
+                <a href="#" class="currency-option" data-currency="ARS">ARS</a>
+                <a href="#" class="currency-option" data-currency="EUR">EUR</a>
+                <a href="#" class="currency-option" data-currency="BRL">BRL</a>
+              </div>
+            </li>
+          </ul>
+          
+          <div class="burger">
+            <div class="line1"></div>
+            <div class="line2"></div>
+            <div class="line3"></div>
+          </div>
+        </nav>
+      </header>
+    </div>
+
+    <section class="ropa-section">
+      <div class="separador">
+        <p class="titulo">World Paradise Tours</p>
+        <div class="ajuste">
+          <h2>Descubre el estilo que te abriga en cada aventura.</h2>
+        </div>
+        <div class="botonmoderno botonmoderno-grande">hace tu reserva</div>
+      </div>
+      <div>
+        <img
+          src="/src/img/ropa/presentaciones/principal.jpg"
+          alt="Ropa de aventura"
+        />
+      </div>
+    </section>
+
+    <section class="ropa-info">
+      <div class="separador">
+        <p class="titulo">World Paradise Tours</p>
+        <div class="ajuste">
+          <h2>Estilo en cada recuerdo</h2>
+        </div>
+        <p>
+          En nuestros atuendos invernales, la comodidad y el estilo se fusionan.
+          Desde abrigos elegantes hasta suéteres cálidos, nuestra ropa está
+          diseñada para mantenerte abrigado mientras exploras paisajes nevados.
+          No sacrifiques la moda por la funcionalidad: con nosotros, puedes
+          tener ambos. ¡Prepárate para aventuras invernales con estilo!
+        </p>
+      </div>
+      <div class="fotos-muestra">
+        <img src="/src/img/ropa/presentaciones/muestra1.jpg" alt="muestra-ropa-1">
+        <img src="/src/img/ropa/presentaciones/muestra2.jpg" alt="muestra-ropa-2">
+        <img src="/src/img/ropa/presentaciones/muestra3.jpg" alt="muestra-ropa-3">
+      </div>
+    </section>
+
+    <section class="ropa-section">
+        <div>
+            <img src="/src/img/ropa/presentaciones/final.jpg" alt="Ropa de aventura"/>
+        </div>
+
+        <div class="separador">
+          <p class="titulo">World Paradise Tours</p>
+          <div class="ajuste-reserva">
+            <h2>Reserva ahora y abraza el invierno con estilo.</h2>
+          </div>
+          <div class="botonmoderno botonmoderno-grande">hace tu reserva</div>
+        </div>
+        
+    </section>
+
+    <footer>
+      <div class="footer-content">
+        <div class="footer-info">
+          <h3>World Paradise Tours</h3>
+          <p>Explora Argentina con el mejor acompañamiento</p>
+        </div>
+        <div class="footer-links">
+          <a href="#section1">Tours</a>
+          <a href="#section4">Destinos</a>
+          <a href="#section5">Contacto</a>
+        </div>
+      </div>
+      <div class="footer-copyright">
+        <p>
+          Desarrollado por:
+          <a
+            href="https://www.linkedin.com/in/henry-nehuen-mesias-rios-41a756297"
+            >Nehuen Mesias</a
+          >
+        </p>
+        <p>Todos los derechos reservados</p>
+      </div>
+    </footer>
+
+    <style>
+        section{
+            height: 100%;
+            max-height: 1200px;
+        }
+      .ropa-section {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 4rem 2rem;
+      }
+      .ropa-info {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 4rem 2rem;
+        background-image: url("/src/img/fondos/fondori.png");
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed;
+        will-change: transform;
+      }
+      .fotos-muestra {
+        display: flex;
+        justify-content: space-between;
+        gap: 1rem; /* Espacio entre las imágenes */
+      }
+
+      .fotos-muestra img {
+        width: 300px; /* Ancho de las imágenes */
+        height: 400px; /* Mantener la proporción de la imagen */
+        object-fit: cover;
+      }
+      
+      .ropa-info p {
+        width: 400px;
+      }
+
+      .ajuste {
+        width: 380px;
+      }
+      .ajuste-reserva h2{
+        width: 300px;
+        font-size: 40px ;
+      }
+
+      .separador {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        max-width: 50%;
+        height: 100%;
+        margin-left: 100px;
+      }
+
+      .titulo {
+        margin-top: 20px;
+        margin-bottom: auto;
+        text-align: center;
+        font-size: 1.5rem;
+        font-weight: bold;
+      }
+
+      h2 {
+        font-size: 35px;
+        text-align: center;
+        margin-top: 2rem;
+        margin-bottom: 2rem;
+      }
+
+      .botonmoderno {
+        font-size: 15px;
+        margin-top: auto;
+        align-self: center;
+        margin-bottom: 130px;
+      }
+      .botonmoderno-grande {
+        font-size: 1.4rem; /* Tamaño del texto más grande */
+        width: 350px; /* Ancho más grande */
+        height: 80px; /* Altura más grande */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .ropa-section img {
+        max-width: 100%;
+        height: auto;
+      }
+    </style>
+  </body>
+</html>

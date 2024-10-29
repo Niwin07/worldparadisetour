@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>World Paradise Tours - Ushuaia</title>
+    <link rel="stylesheet" href="/src/css/index.css" />
+    <link rel="stylesheet" href="/src/css/acceso.css" />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+      integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <script type="module" src="/js/Main.js" defer></script>
+    <script type="module" src="/js/acceso.js" defer></script>
+  </head>
+
+  <body>
+    <div id="content-wrap">
+      <header>
+        <nav class="navbar">
+          <div class="logo">
+            <h1>World Paradise Tours</h1>
+          </div>
+          
+          <ul class="nav-links">
+            <li><a href="/index.html">Inicio</a></li>
+            <li class="dropdown">
+              <a href="#" class="dropbtn">Explorar <i class="fas fa-chevron-down"></i></a>
+              <div class="dropdown-content">
+                <a href="/Destinos.html">Tours</a>
+                <a href="#section4">Destinos</a>
+                <a href="#">Paquetes</a>
+                <a href="#">Paquetes personalizados</a>
+              </div>
+            </li>
+            <li><a href="#section5">Contacto</a></li>
+            <li class="dropdown">
+              <a href="#" class="dropbtn">Mi cuenta <i class="fas fa-chevron-down"></i></a>
+              <div class="dropdown-content">
+                <a href="/cuenta.html">Mi perfil</a>
+                <a href="/solicitudes.html">Mis solicitudes</a>
+                <a href="#" onclick="logOut()">Cerrar Sesion</a>
+              </div>
+            </li>
+            <li class="dropdown">
+              <a href="#" class="dropbtn">Idioma <i class="fas fa-chevron-down"></i></a>
+              <div class="dropdown-content">
+                <a href="#" data-lang="es">Español</a>
+                <a href="#" data-lang="en">English</a>
+                <a href="#" data-lang="pt">Português</a>
+              </div>
+            </li>
+            <li>
+              <a href="/carrito.html" class="cart-icon">
+                <i class="fas fa-shopping-cart"></i>
+                <span class="cart-count">0</span>
+              </a>
+            </li>
+            <li class="dropdown">
+              <a href="#" class="dropbtn currency-btn">USD <i class="fas fa-chevron-down"></i></a>
+              <div class="dropdown-content">
+                <a href="#" class="currency-option" data-currency="USD">USD</a>
+                <a href="#" class="currency-option" data-currency="ARS">ARS</a>
+                <a href="#" class="currency-option" data-currency="EUR">EUR</a>
+                <a href="#" class="currency-option" data-currency="BRL">BRL</a>
+              </div>
+            </li>
+          </ul>
+          
+          <div class="burger">
+            <div class="line1"></div>
+            <div class="line2"></div>
+            <div class="line3"></div>
+          </div>
+        </nav>
+      </header>
+    </div>
+
+    <div class="auth-wrapper">
+      <div class="auth-container">
+        <h2>Autenticación</h2>
+        <div class="tabs">
+          <div class="tab active" onclick="showTab('login')">Iniciar Sesión</div>
+          <div class="tab" onclick="showTab('signup')">Regístrate</div>
+        </div>
+        
+        <div class="tabs-container">
+          <div id="login" class="tab-content active">
+            <form id="loginForm">
+              <div class="form-group">
+                <input type="email" name="Email" placeholder="Correo electrónico" required>
+                <div id="login-email-error" class="error-message"></div>
+              </div>
+              <div class="form-group">
+                <input type="password" name="password" placeholder="Contraseña" required>
+                <div id="login-password-error" class="error-message"></div>
+              </div>
+              <button type="submit">Iniciar Sesión</button>
+            </form>
+          </div>
+          
+          <div id="signup" class="tab-content">
+            <form id="signupForm">
+              <div class="form-group">
+                <input type="text" oninput="validarTexto(this)" name="Nombres" placeholder="Nombres" required>
+              </div>
+              <div class="form-group">
+                <input type="text" oninput="validarTexto(this)" name="Apellidos" placeholder="Apellidos" required>
+              </div>
+              <div class="form-group">
+                <input type="email" name="Email" placeholder="Correo electrónico" required>
+              </div>
+              <div class="form-group">
+                <input type="password" name="password" placeholder="Contraseña" required>
+              </div>
+              <div class="form-group">
+                <input type="password" name="repeatPassword" placeholder="Repetir Contraseña" required>
+              </div>
+              <div class="form-group">
+                <label for="fechaNacimiento">Fecha de Nacimiento</label>
+                <input type="date" name="fechaNacimiento" required>
+              </div>
+
+              <div class="tel-input-container">
+                <select id="country-select" class="country-select"></select>
+                <input type="tel" id="phone" class="tel-input" placeholder="Phone number" name="Num_telefono">
+              </div>
+              
+              <div class="form-group" id="nacionalidad"></div>
+                <select name="Pais" required>
+                  <option value="">Selecciona tu país</option>
+                  <option value="Argentina">Argentina</option>
+                  <option value="Brasil">Brasil</option>
+                  <option value="Chile">Chile</option>
+                  <!-- Agrega más países según sea necesario -->
+                </select>
+
+                <div class="gender-selection">
+                  <div class="gender-option">
+                    <input type="radio" id="male" name="Sexo" value="M" required>
+                    <label for="male">Masculino</label>
+                  </div>
+                  <div class="gender-option">
+                    <input type="radio" id="female" name="Sexo" value="F" required>
+                    <label for="female">Femenino</label>
+                  </div>
+                  <div class="gender-option">
+                    <input type="radio" id="Otro" name="Sexo" value="O" required>
+                    <label for="Otro">Otro</label>
+                  </div>
+                </div>
+                <button type="submit" class="btn btn-primary">Registrarse</button>
+              </div>
+              
+              
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer>
+      <div class="footer-content">
+        <div class="footer-info">
+          <h3>World Paradise Tours</h3>
+          <p>Explora Argentina con el mejor acompañamiento</p>
+        </div>
+        <div class="footer-links">
+          <a href="#section1">Tours</a>
+          <a href="#section4">Destinos</a>
+          <a href="#section5">Contacto</a>
+        </div>
+      </div>
+      <div class="footer-copyright">
+        <p>
+          Desarrollado por:
+          <a
+            href="https://www.linkedin.com/in/henry-nehuen-mesias-rios-41a756297"
+            >Nehuen Mesias</a
+          >
+        </p>
+        <p>Todos los derechos reservados</p>
+      </div>
+    </footer>
+    
+    <script>
+      function validarTexto(input) {
+        input.value = input.value.replace(/[0-9]/g, '');
+      }
+    </script>
+    
+    
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  </body>
+</html>

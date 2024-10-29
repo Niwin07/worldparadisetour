@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>World Paradise Tours</title>
+        <link rel="stylesheet" href="../src/css/index.css">
+        <script type="module" src="/js/Main.js" defer></script>
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    </head>
+    <body>
+      <div id="page-container">
+
+        <div id="content-wrap">
+          <header>
+            <nav class="navbar">
+              <div class="logo">
+                <h1>World Paradise Tours</h1>
+              </div>
+              
+              <ul class="nav-links">
+                <li><a href="/index.html">Inicio</a></li>
+                <li class="dropdown">
+                  <a href="#" class="dropbtn">Explorar <i class="fas fa-chevron-down"></i></a>
+                  <div class="dropdown-content">
+                    <a href="/Destinos.html">Tours</a>
+                    <a href="#section4">Destinos</a>
+                    <a href="#">Paquetes</a>
+                    <a href="#">Paquetes personalizados</a>
+                  </div>
+                </li>
+                <li><a href="#section5">Contacto</a></li>
+                <li class="dropdown">
+                  <a href="#" class="dropbtn">Mi cuenta <i class="fas fa-chevron-down"></i></a>
+                  <div class="dropdown-content">
+                    <a href="/cuenta.html">Mi perfil</a>
+                    <a href="/solicitudes.html">Mis solicitudes</a>
+                    <a href="#" onclick="logOut()">Cerrar Sesion</a>
+                  </div>
+                </li>
+                <li class="dropdown">
+                  <a href="#" class="dropbtn">Idioma <i class="fas fa-chevron-down"></i></a>
+                  <div class="dropdown-content">
+                    <a href="#" data-lang="es">Español</a>
+                    <a href="#" data-lang="en">English</a>
+                    <a href="#" data-lang="pt">Português</a>
+                  </div>
+                </li>
+                <li>
+                  <a href="/carrito.html" class="cart-icon">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-count">0</span>
+                  </a>
+                </li>
+                <li class="dropdown">
+                  <a href="#" class="dropbtn currency-btn">USD <i class="fas fa-chevron-down"></i></a>
+                  <div class="dropdown-content">
+                    <a href="#" class="currency-option" data-currency="USD">USD</a>
+                    <a href="#" class="currency-option" data-currency="ARS">ARS</a>
+                    <a href="#" class="currency-option" data-currency="EUR">EUR</a>
+                    <a href="#" class="currency-option" data-currency="BRL">BRL</a>
+                  </div>
+                </li>
+              </ul>
+              
+              <div class="burger">
+                <div class="line1"></div>
+                <div class="line2"></div>
+                <div class="line3"></div>
+              </div>
+            </nav>
+          </header>
+        </div>
+        
+  
+        <main id="main-content">
+          <div class="filtros-wrapper">
+            <div class="filtros">
+              <button data-type="city" data-value="ushuaia">Ushuaia</button>
+              <button data-type="city" data-value="calafate">Calafate</button>
+              <button data-type="city" data-value="otros">Otros Destinos</button>
+              <button data-type="city" data-value="antartida">Antártida</button>
+              <button data-type="season" data-value="winter">Invierno</button>
+              <button data-type="season" data-value="summer">Verano</button>
+              <button data-type="city" data-value="all">Mostrar Todo</button>
+            </div>
+          </div>
+        
+          <div id="contenedor" class="tours-grid"></div>
+          <div id="pagination-container"></div>
+        </main>
+          
+          <footer>
+            <div class="footer-content">
+              <div class="footer-info">
+                <h3>World Paradise Tours</h3>
+                <p>Explora Argentina con el mejor acompañamiento</p>
+              </div>
+              <div class="footer-links">
+                <a href="#section1">Tours</a>
+                <a href="#section4">Destinos</a>
+                <a href="#section5">Contacto</a>
+              </div>
+            </div>
+            <div class="footer-copyright">
+              <p>Desarrollado por: <a href="https://www.linkedin.com/in/henry-nehuen-mesias-rios-41a756297">Nehuen Mesias</a></p>
+              <p>Todos los derechos reservados</p>
+            </div>
+          </footer>
+
+      </div>
+
+    <style>
+#main-content {
+  margin-top: 80px; /* Altura del header + altura de los filtros + algún padding */
+  min-height: 950px;
+  display: flex;
+  flex-direction: column;
+}
+:root {
+    --primary-color: #151A21;
+    --text-color: #B2AFAC;
+    --boton-color: #EFE9E4;
+    --accent-color: #EFFFFF;
+    --transition: all 0.3s ease-in-out;
+}
+
+
+/* Contenedor principal de tours */
+.tours-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 2rem;
+    padding: 2rem;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.tour-card {
+    background-color: var(--primary-color);
+    border: 1px solid var(--text-color);
+    border-radius: 8px;
+    overflow: hidden;
+    transition: var(--transition);
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    height: 300px; /* Altura fija para todas las tarjetas */
+}
+
+.tour-card:hover {
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: 0 10px 20px rgba(239, 233, 228, 0.2);
+}
+
+.tour-image-container {
+    width: 100%;
+    height: 80%; /* 80% de la altura de la tarjeta para la imagen */
+    position: relative;
+    overflow: hidden;
+}
+
+.tour-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: var(--transition);
+}
+
+.tour-card:hover .tour-image {
+    transform: scale(1.1);
+}
+
+.tour-name {
+    height: 20%; /* 20% de la altura de la tarjeta para el nombre */
+    padding: 0.5rem;
+    margin: 0;
+    font-size: 1rem;
+    text-align: center;
+    color: var(--boton-color);
+    background-color: rgba(21, 26, 33, 0.9);
+    transition: var(--transition);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.tour-name span {
+    display: block;
+    line-height: 1.2;
+    /* Estas propiedades aseguran que el texto se ajuste automáticamente */
+    width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.tour-card:hover .tour-name {
+    background-color: rgba(21, 26, 33, 1);
+}
+
+
+/* Estilos para la paginación */
+#pagination-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem;
+    padding-bottom: 2rem;
+}
+
+.pagination-button {
+    background-color: var(--boton-color);
+    color: var(--primary-color);
+    border: none;
+    padding: 0.8rem 1.2rem;
+    margin: 0 0.5rem;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: var(--transition);
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    box-shadow: 0 4px 6px rgba(239, 233, 228, 0.1);
+}
+
+.pagination-button:hover {
+    background-color: var(--accent-color);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 8px rgba(239, 233, 228, 0.2);
+}
+
+.pagination-button:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 4px rgba(239, 233, 228, 0.1);
+}
+
+.pagination-button.active {
+    background-color: var(--accent-color);
+    color: var(--primary-color);
+}
+
+/* Estilos para los filtros */
+.filtros-wrapper {
+    background-color: rgba(178, 175, 172, 0.1);
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.filtros {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.filtros button {
+    font-family: "Anton", sans-serif;
+    background-color: var(--boton-color);
+    color: var(--primary-color);
+    border: none;
+    padding: 0.8rem 1.2rem;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: var(--transition);
+    font-size: 30px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    box-shadow: 0 4px 6px rgba(239, 233, 228, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.filtros button:hover {
+    background-color: var(--accent-color);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 8px rgba(239, 233, 228, 0.2);
+}
+
+.filtros button:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 4px rgba(239, 233, 228, 0.1);
+}
+
+.filtros button.active {
+  background-color: #007bff; /* Color para indicar que está activo */
+  color: white;
+}
+
+.filtros button:hover,
+.filtros button.active {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsive design */
+@media (max-width: 1200px) {
+    .tours-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+@media (max-width: 992px) {
+    .tours-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .tours-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 576px) {
+    .tours-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 1200px) {
+    .tour-name {
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 992px) {
+    .tour-name {
+        font-size: 0.8rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .tour-card {
+        height: 250px;
+    }
+    .tour-name {
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .tour-card {
+        height: 300px;
+    }
+    .tour-name {
+        font-size: 1rem;
+    }
+}
+
+  </style>
+
+
+
+
+
+
+</body>
+</html>

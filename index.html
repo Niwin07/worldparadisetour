@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>World Paradise Tours - Ushuaia</title>
+    <link rel="stylesheet" href="../src/css/index.css">
+    <script type="module" src="../js/Main.js" defer></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body>
+
+  <div id="page-container">
+
+    <div id="content-wrap">
+      <header>
+        <nav class="navbar">
+          <div class="logo">
+            <h1>World Paradise Tours</h1>
+          </div>
+          
+          <ul class="nav-links">
+            <li><a href="/index.html">Inicio</a></li>
+            <li class="dropdown">
+              <a href="#" class="dropbtn">Explorar <i class="fas fa-chevron-down"></i></a>
+              <div class="dropdown-content">
+                <a href="/Destinos.html">Tours</a>
+                <a href="#section4">Destinos</a>
+                <a href="#">Paquetes</a>
+                <a href="#">Paquetes personalizados</a>
+              </div>
+            </li>
+            <li><a href="#section5">Contacto</a></li>
+            <li class="dropdown">
+              <a href="#" class="dropbtn">Mi cuenta <i class="fas fa-chevron-down"></i></a>
+              <div class="dropdown-content">
+                <a href="/cuenta.html">Mi perfil</a>
+                <a href="/solicitudes.html">Mis solicitudes</a>
+                <a href="#" onclick="window.logout()">Cerrar Sesion</a>
+              </div>
+            </li>
+            <li class="dropdown">
+              <a href="#" class="dropbtn">Idioma <i class="fas fa-chevron-down"></i></a>
+              <div class="dropdown-content">
+                <a href="#" data-lang="es">Español</a>
+                <a href="#" data-lang="en">English</a>
+                <a href="#" data-lang="pt">Português</a>
+              </div>
+            </li>
+            <li>
+              <a href="/carrito.html" class="cart-icon">
+                <i class="fas fa-shopping-cart"></i>
+                <span class="cart-count">0</span>
+              </a>
+            </li>
+            <li class="dropdown">
+              <a href="#" class="dropbtn currency-btn">USD <i class="fas fa-chevron-down"></i></a>
+              <div class="dropdown-content">
+                <a href="#" class="currency-option" data-currency="USD">USD</a>
+                <a href="#" class="currency-option" data-currency="ARS">ARS</a>
+                <a href="#" class="currency-option" data-currency="EUR">EUR</a>
+                <a href="#" class="currency-option" data-currency="BRL">BRL</a>
+              </div>
+            </li>
+          </ul>
+          
+          <div class="burger">
+            <div class="line1"></div>
+            <div class="line2"></div>
+            <div class="line3"></div>
+          </div>
+        </nav>
+      </header>
+    </div>
+
+  <main>
+
+    <div class="banner-container">
+      <div class="banner-carrusel">
+        <div class="banner-item active" style="background-image: url('/src/img/banner/1.png');"></div>
+        <div class="banner-item" style="background-image: url('/src/img/banner/2.png');"></div>
+        <div class="banner-item" style="background-image: url('/src/img/banner/3.png');"></div>    
+      </div>
+      <div class="banner-controls">
+        <button class="active"></button>
+        <button></button>
+        <button></button>
+      </div>
+    </div>
+
+    <section id="section1" class="sections">
+      <div class="contenedor-tarjetas-destinos">
+        <div class="titulo">
+          <h1>NUESTROS DESTINOS</h1>
+          <h3>Explora Argentina con el mejor acompañamiento</h3>
+        </div>
+        
+        <div class="destinos-fila">
+          <div class="tarjeta-destino">
+            <img src="https://th.bing.com/th/id/R.8c1f0c2b7c0acff22e66f1dce0bbe620?rik=nJgT1BI4DCOx8g&pid=ImgRaw&r=0" alt="Calafate">
+            <div class="botonmoderno" data-city="calafate">CALAFATE</div>
+          </div>
+    
+          <div class="tarjeta-destino">
+            <img src="/src/img/tarjetas/invierno1.jpg" alt="Ushuaia">
+            <div class="botonmoderno" data-city="ushuaia">USHUAIA</div>
+          </div>
+    
+          <div class="tarjeta-destino">
+            <img src="https://i.pinimg.com/originals/11/47/05/114705cb3407d634a51b2bf1ffd10803.jpg" alt="Otros destinos">
+            <div class="botonmoderno" data-city="otros">OTROS DESTINOS</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="section2" class="sections">
+      <div class="titulo-tours">
+        <h2>TOURS DE VERANO</h2>
+        <h3>Explora tierra del fuego bajo el sol patagónico</h3>
+        <div class="botonmoderno-tours" data-season="summer">
+          <h2>Mostrar todo</h2>
+        </div>
+      </div>
+          <div class="contenedor-tours-verano">
+            <div class="contenedor-tours">
+              <div class="caja-tour">
+                <img src="/src/img/tarjetas/parque-nacional.jpg" alt="Parque Nacional">
+                <h4>Parque Nacional</h4>
+              </div>
+              <div class="caja-tour">
+                <img src="/src/img/tarjetas/trineo-perros-ushuaia.jpg" alt="Sierra Alvear">
+                <h4>Aventura Blanca</h4>
+              </div>
+              <div class="caja-tour">
+                <img src="/src/img/tarjetas/LLanos-del-Castor.jpeg" alt="LLanos-del-Castor">
+                <h4>Llanos del Castor</h4>
+              </div>
+              <div class="caja-tour">
+                <img src="/src/img/tarjetas/lagos-road.jpg" alt="lagos-road">
+                <h4>Lagos Off Road</h4>
+              </div>
+            </div>
+          </div>
+          
+      
+    </section>
+
+    <section id="section3" class="sections">
+
+      <div class="titulo-tours">
+        <h2>TOURS DE INVIERNO</h2>
+        <h3>Vive la experiencia única del invierno patagónico</h3>
+        <div class="botonmoderno-tours" data-season="winter">
+          <h2>Mostrar todo</h2>
+        </div>
+      </div>
+
+      <div class="contenedor-tours-verano">
+        <div class="contenedor-tours">
+          <div class="caja-tour">
+            <img src="/src/img/tarjetas/invierno1.jpg" alt="Parque Nacional">
+            <h4>Laguna Esmeralda </h4>
+
+          </div>
+    
+          <div class="caja-tour">
+            <img src="/src/img/tarjetas/Tren-del-Fin-del-Mundo.jpg" alt="Sierra Alvear">
+            <h4>El tren del fin del mundo</h4>
+          </div>
+    
+          <div class="caja-tour">
+            <img src="/src/img/tarjetas/cascadaamigos.jpeg" alt="">
+            <h4>Cascada de los amigos</h4>
+          </div>
+    
+          <div class="caja-tour">
+            <img src="/src/img/tarjetas/turquesa.jpeg" alt="">
+            <h4>Laguna Turquesa </h4>
+          </div>
+         </div>
+      </div>
+    </section>
+    
+    <section id="antartida-tours" class="sections" style="background-image: url('/src/img/fondos/antartida.svg'); background-size: cover; background-position: center; padding: 8rem 2rem;">
+      <div class="contenedor-antartida">
+        
+        <div class="titulo-antartida">
+          <h2 style="color: var(--accent-color); font-size: 3.5rem; letter-spacing: 3px;">EXPLORA LA ANTÁRTIDA</h2>
+          <h3 style="color: var(--boton-color); font-size: 2rem;">Una experiencia exclusiva y única</h3>
+        </div>
+        
+        <div class="contenedor-tours-antartida">
+          <div class="caja-tour-antartida">
+            <img src="/src/img/antartida/1.jpg" alt="Tour Antártida - Icebergs">
+            <h4>Exploración de Icebergs</h4>
+          </div>
+    
+          <div class="caja-tour-antartida">
+            <img src="/src/img/antartida/2.jpg" alt="Tour Antártida - Vida Salvaje">
+            <h4>Paisajes Impresionantes</h4>
+          </div>
+    
+          <div class="caja-tour-antartida">
+            <img src="/src/img/antartida/3.jpg" alt="Tour Antártida - Glaciares">
+            <h4>Glaciares Imponentes</h4>
+          </div>
+        </div>
+        
+        <div class="cta-antartida">
+          <button class="botonmoderno-tours" data-city="antartida" style="border-color: var(--accent-color); color: var(--accent-color); font-size: 1.5rem; padding: 1.2rem 2.5rem;">
+            RESERVA TU LUGAR
+          </button>
+        </div>
+        
+      </div>
+    </section>
+    
+    
+    
+    
+
+    <section id="section6" class="sections">
+
+      <div class="titulo-tours">
+        <h2>RENTAL DE ROPA</h2>
+        <h3>Vestido para la aventura, listo para el desafío</h3>
+        <div class="botonmoderno-tours" id="ropa-boton">
+          <h2>Mostrar todo</a></h2>
+        </div>
+      </div>
+
+      <div class="contenedor-tours-verano">
+        <div class="contenedor-tours">
+          <div class="caja-tour">
+            <img src="/src/img/ropa/contenedor/full-kit.jpg" alt="Parque Nacional">
+            <h4>Conjuto FULL invierno</h4>
+
+          </div>
+    
+          <div class="caja-tour">
+            <img src="/src/img/ropa/contenedor/Ski.jpg" alt="Sierra Alvear">
+            <h4>Ski Kit</h4>
+          </div>
+    
+          <div class="caja-tour">
+            <img src="/src/img/ropa/contenedor/snowboard.jpg" alt="">
+            <h4>Snowboards</h4>
+          </div>
+    
+          <div class="caja-tour">
+            <img src="/src/img/ropa/contenedor/termica.jpg" alt="">
+            <h4>Cobertura Termica</h4>
+          </div>
+         </div>
+      </div>
+    </section>
+
+
+    <section id="section4" class="sections">
+
+      <div id="section4" class="section sections">
+        <div class="carrusel-container">
+            <h2 class="carrusel-titulo">NUESTROS SOCIOS</h2>
+            <div class="carrusel">
+                <img src="/src/img/tarjetas/cascadaamigos.jpeg" alt="Destino 1" class="carrusel-item">
+                <img src="/src/img/tarjetas/turquesa.jpeg" alt="Destino 2" class="carrusel-item">
+                <img src="/src/img/tarjetas/LLanos-del-Castor.jpeg" alt="Destino 3" class="carrusel-item">
+                <img src="/src/img/tarjetas/lagos-road.jpg" alt="Destino 4" class="carrusel-item">
+                <img src="/src/img/tarjetas/Tren-del-Fin-del-Mundo.jpg" alt="Destino 5" class="carrusel-item">
+            </div>
+        </div>
+    </div>
+    </section>
+
+    <div id="section5" class="section sections">
+      <div class="contacto-container">
+          <h2 class="contacto-titulo">¿DUDAS? HABLA CON NOSOTROS</h2>
+          <div class="contacto-content">
+              <div class="contacto-info">
+                  <h3>Podés contactarte con nosotros a través de los siguientes canales:</h3>
+                  <ul class="contacto-lista">
+                      <li><i class="fas fa-envelope"></i> Email: comercial@paradiseushuaia.com</li>
+                      <li><i class="fab fa-instagram"></i> Instagram: @WORLDPARADISETOURS</li>
+                      <li><i class="fab fa-facebook"></i> Facebook: @WORLDPARADISETOURS</li>
+                      <li><i class="fab fa-twitter"></i> Twitter: @PARADISETOURS</li>
+                  </ul>
+              </div>
+              <div class="contacto-whatsapp">
+                  <a href="https://wa.me/5492901481578" class="botonmoderno">
+                      <i class="fab fa-whatsapp"></i> ESCRIBINOS A WHATSAPP: 2901-481578
+                  </a>
+              </div>
+          </div>
+      </div>
+  </div>
+
+  </main>
+  
+  <footer>
+    <div class="footer-content">
+      <div class="footer-info">
+        <h3>World Paradise Tours</h3>
+        <p>Explora Argentina con el mejor acompañamiento</p>
+      </div>
+      <div class="footer-links">
+        <a href="#section1">Tours</a>
+        <a href="#section4">Destinos</a>
+        <a href="#section5">Contacto</a>
+      </div>
+      <a href="http://qr.afip.gob.ar/?qr=Mwgep1YitRizNXo36eExrw,," target="_F960AFIPInfo"><img src="http://www.afip.gob.ar/images/f960/DATAWEB.jpg" border="0" alt="logo-afip"></a>
+    </div>
+    <div class="footer-copyright">
+      <p>Desarrollado por: <a href="https://www.linkedin.com/in/henry-nehuen-mesias-rios-41a756297">Nehuen Mesias</a></p>
+      <p>Todos los derechos reservados</p>
+    </div>
+  </footer>
+
+  <script>
+    const bannerCarousel = document.querySelector('.banner-carrusel');
+    const bannerItems = document.querySelectorAll('.banner-item');
+    const bannerControls = document.querySelectorAll('.banner-controls button');
+
+    // Variables para manejar el carrusel
+    let currentIndex = 0;
+    let intervalId;
+
+    // Función para mostrar el banner actual
+    function showBanner(index) {
+      bannerItems.forEach((item, i) => {
+        if (i === index) {
+          item.classList.add('active');
+        } else {
+          item.classList.remove('active');
+        }
+      });
+
+      bannerControls.forEach((control, i) => {
+        if (i === index) {
+          control.classList.add('active');
+        } else {
+          control.classList.remove('active');
+        }
+      });
+    }
+
+    // Función para avanzar al siguiente banner
+    function nextBanner() {
+      currentIndex = (currentIndex + 1) % bannerItems.length;
+      showBanner(currentIndex);
+    }
+
+    // Iniciar el carrusel
+    function startCarousel() {
+      intervalId = setInterval(nextBanner, 5000); // Cambiar de banner cada 5 segundos
+    }
+
+    // Iniciar el carrusel al cargar la página
+    window.addEventListener('load', startCarousel);
+
+    // Detener el carrusel al hacer clic en los controles
+    bannerControls.forEach((control, index) => {
+      control.addEventListener('click', () => {
+        currentIndex = index;
+        showBanner(currentIndex);
+        clearInterval(intervalId);
+        startCarousel();
+      });
+    });
+
+    
+  </script>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const carrusel = document.querySelector('.carrusel');
+        const items = carrusel.querySelectorAll('.carrusel-item');
+        let currentIndex = 0;
+
+        function showItem(index) {
+            items.forEach(item => item.classList.remove('active'));
+            items[index].classList.add('active');
+        }
+
+        function nextItem() {
+            currentIndex = (currentIndex + 1) % items.length;
+            showItem(currentIndex);
+        }
+
+        // Mostrar el primer item
+        showItem(currentIndex);
+
+        // Cambiar automáticamente cada 5 segundos
+        setInterval(nextItem, 5000);
+    });
+</script>
+</body>
+</html>

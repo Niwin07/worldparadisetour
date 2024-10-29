@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Carrito - World Paradise Tours</title>
+    <link rel="stylesheet" href="../src/css/index.css">
+    <script type="module" src="../js/Main.js" defer></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/your-fontawesome-kit.js" crossorigin="anonymous"></script>
+</head>
+<body>
+  <div id="content-wrap">
+    <header>
+      <nav class="navbar">
+        <div class="logo">
+          <h1>World Paradise Tours</h1>
+        </div>
+        
+        <ul class="nav-links">
+          <li><a href="/index.html">Inicio</a></li>
+          <li class="dropdown">
+            <a href="#" class="dropbtn">Explorar <i class="fas fa-chevron-down"></i></a>
+            <div class="dropdown-content">
+              <a href="/Destinos.html">Tours</a>
+              <a href="#section4">Destinos</a>
+              <a href="#">Paquetes</a>
+              <a href="#">Paquetes personalizados</a>
+            </div>
+          </li>
+          <li><a href="#section5">Contacto</a></li>
+          <li class="dropdown">
+            <a href="#" class="dropbtn">Mi cuenta <i class="fas fa-chevron-down"></i></a>
+            <div class="dropdown-content">
+              <a href="/cuenta.html">Mi perfil</a>
+              <a href="/solicitudes.html">Mis solicitudes</a>
+              <a href="#" onclick="logOut()">Cerrar Sesion</a>
+            </div>
+          </li>
+          <li class="dropdown">
+            <a href="#" class="dropbtn">Idioma <i class="fas fa-chevron-down"></i></a>
+            <div class="dropdown-content">
+              <a href="#" data-lang="es">Español</a>
+              <a href="#" data-lang="en">English</a>
+              <a href="#" data-lang="pt">Português</a>
+            </div>
+          </li>
+          <li>
+            <a href="/carrito.html" class="cart-icon">
+              <i class="fas fa-shopping-cart"></i>
+              <span class="cart-count">0</span>
+            </a>
+          </li>
+          <li class="dropdown">
+            <a href="#" class="dropbtn currency-btn">USD <i class="fas fa-chevron-down"></i></a>
+            <div class="dropdown-content">
+              <a href="#" class="currency-option" data-currency="USD">USD</a>
+              <a href="#" class="currency-option" data-currency="ARS">ARS</a>
+              <a href="#" class="currency-option" data-currency="EUR">EUR</a>
+              <a href="#" class="currency-option" data-currency="BRL">BRL</a>
+            </div>
+          </li>
+        </ul>
+        
+        <div class="burger">
+          <div class="line1"></div>
+          <div class="line2"></div>
+          <div class="line3"></div>
+        </div>
+      </nav>
+    </header>
+  </div>
+
+  <main role="main">
+    <div class="cart-container">
+      <h1 class="cart-title">Mi Carrito</h1>
+      <div id="carrito-container">
+        <!-- Cart items will be dynamically inserted here -->
+      </div>
+      <div id="cart-actions">
+        <button id="edit-all-btn" class="edit-btn">Editar todos los tours</button>
+        <button id="discard-changes-btn" class="remove-btn" style="display: none;">Descartar Cambios</button>
+        <button id="save-changes-btn" class="checkout-btn" style="display: none;">Guardar Cambios</button>
+      </div>      
+      <div class="item-asesoria">
+        <label for="asesoria-alojamiento">¿Desea asesoría de alojamientos?</label>
+        <select id="asesoria-alojamiento" name="asesoria-alojamiento">
+            <option value="si">Sí</option>
+            <option value="no">No</option>
+        </select>
+    </div>
+      <div class="cart-summary">
+        <p class="cart-total">Total: $<span id="total-amount">0</span></p>
+        <button class="checkout-btn" onclick="crearSolicitud()">Enviar Solicitud</button>
+      </div>
+    </div>
+  </main>
+  <div id="temporary-message" class="temporary-message" style="display: none;"></div>
+
+    <footer>
+        <div class="footer-content">
+          <div class="footer-info">
+            <h3>World Paradise Tours</h3>
+            <p>Explora Argentina con el mejor acompañamiento</p>
+          </div>
+          <div class="footer-links">
+            <a href="#section1">Tours</a>
+            <a href="#section4">Destinos</a>
+            <a href="#section5">Contacto</a>
+          </div>
+          <a href="http://qr.afip.gob.ar/?qr=Mwgep1YitRizNXo36eExrw,," target="_F960AFIPInfo"><img src="http://www.afip.gob.ar/images/f960/DATAWEB.jpg" border="0" alt="logo-afip"></a>
+        </div>
+        <div class="footer-copyright">
+          <p>Desarrollado por: <a href="https://www.linkedin.com/in/henry-nehuen-mesias-rios-41a756297">Nehuen Mesias</a></p>
+          <p>Todos los derechos reservados</p>
+        </div>
+    </footer>
+
+    <style>
+      /* Estilos generales para botones */
+button {
+  padding: 0.75rem 1.5rem; /* Aumenta el padding para que todos los botones tengan el mismo tamaño */
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-family: inherit;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Añadir una ligera sombra */
+}
+
+/* Botón para 'Editar' */
+.edit-btn {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: var(--light-text);
+  margin-right: 1rem;
+}
+
+.edit-btn:hover {
+  background-color: #0a2647;
+  transform: translateY(-3px); /* Añade un efecto de elevación al hacer hover */
+}
+
+/* Botón para 'Descartar Cambios' */
+.remove-btn {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: var(--light-text);
+}
+
+.remove-btn:hover {
+  background-color: #d13652;
+  transform: translateY(-3px);
+}
+
+/* Botón para 'Guardar Cambios' */
+.checkout-btn {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: var(--light-text);
+  font-size: 1rem; /* Tamaño de fuente unificado */
+  border-radius: 8px;
+}
+
+.checkout-btn:hover {
+  background-color: green;
+  transform: translateY(-3px);
+}
+
+/* Estilo para el select de asesoría de alojamiento */
+#asesoria-alojamiento {
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  color: var(--light-text); /* Asegúrate de que esta variable esté definida */
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 8px;
+  appearance: none; /* Oculta la flecha nativa */
+  cursor: pointer;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra ligera */
+  background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0iIzAwMDAwMCI+PHBhdGggZD0iTTExLjI5IDE2LjcxYy0uMzkuMy0xIC4zLTQuMzMtNS45NTctMy43NS00LjY5LS4yMS0xLjQ2LjE4LTEuODVzMS4yMi0xLjMxIDEuNjktMS4zOWMyLjA5LjM3LjYxIDEuODkuOTUgMy4xOXYwYy4zNC0xLjMgMy41OS0yLjg1IDMuNTktMi44NS43NC4xMyAxLjY3IDEuMzkgMS42OSAxLjQgMi42NyA2LjM2LTUuMzcgNi42Ni01LjQxIDYuOTEtLjIuNTUtLjExIDEuMy0uMTkgMS42Ni0uMDcuMzctLjAyLjgtLjAyIDEuODN6Ii8+PC9zdmc+');
+  background-repeat: no-repeat;
+  background-position: right 1rem center;
+  background-size: 12px;
+}
+
+#asesoria-alojamiento:hover, #asesoria-alojamiento:focus {
+  border-color: green;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15); /* Mayor sombra al hacer hover o focus */
+}
+.item-asesoria{
+  padding: 0.75rem 1.5rem;
+}
+
+
+
+    </style>
+
+
+    <script src="/js/carrito.js" defer></script>
+</body>
+</html>

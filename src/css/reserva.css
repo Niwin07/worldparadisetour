@@ -1,0 +1,217 @@
+
+  :root {
+    --primary-color: #151A21;
+    --text-color: #B2AFAC;
+    --accent-color: #EFFFFF;
+    --boton-color: #EFE9E4;
+  }
+
+  .reserva-container {
+    display: flex;
+    flex-direction: row; /* Cambiado para que los elementos se dispongan en fila */
+    justify-content: space-between; /* Espacio entre los elementos */
+    max-width: 1100px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background-color: var(--primary-color);
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+
+  .tour-card {
+    display: flex;
+    flex-direction: column;
+    background-color: rgba(30, 37, 48, 0.7);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-right: 2rem; /* Añadido espacio a la derecha */
+    flex: 1; /* El tour-card tomará todo el espacio disponible a la izquierda */
+  }
+
+  .tour-image-container {
+    width: 100%;
+    max-height: 300px;
+    overflow: hidden;
+  }
+
+  .tour-image {
+    width: 100%; /* Asegura que la imagen use todo el espacio */
+    height: auto;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+  }
+
+  .tour-image:hover {
+    transform: scale(1.05);
+  }
+
+  .tour-info {
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .tour-name {
+    font-size: 2rem;
+    color: var(--accent-color);
+    margin-bottom: 0.5rem;
+  }
+
+  .tour-slogan {
+    font-style: italic;
+    color: var(--text-color);
+    margin-bottom: 1.5rem;
+  }
+
+  .tour-details {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+
+  .tour-detail {
+    background-color: rgba(239, 233, 228, 0.1);
+    padding: 1rem;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    transition: all 0.3s ease;
+    animation: fadeInUp 0.5s ease-out forwards;
+    opacity: 0;
+  }
+
+  .tour-detail:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(239, 233, 228, 0.2);
+  }
+
+  .tour-detail i {
+    font-size: 1.5rem;
+    margin-right: 1rem;
+    color: var(--accent-color);
+  }
+
+  .tour-detail span {
+    font-size: 0.9rem;
+    color: var(--text-color);
+  }
+
+  /* Estilo para el formulario de reserva */
+  .reserva-form {
+    background-color: rgba(255, 255, 255, 0.05);
+    padding: 1.5rem;
+    border-radius: 8px;
+    animation: fadeIn 0.5s ease-out;
+    flex: 0.5; /* El formulario tomará menos espacio que la sección de tour */
+    min-width: 400px; /* Asegura un tamaño mínimo para el formulario */
+    margin-left: 2rem; /* Añade un espacio entre la información del tour y el formulario */
+  }
+
+  .form-group {
+    margin-bottom: 1rem;
+  }
+
+  .form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: var(--accent-color);
+  }
+
+  .form-group input,
+  .form-group select {
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid var(--text-color);
+    background-color: rgba(255, 255, 255, 0.1);
+    color: var(--text-color);
+    border-radius: 4px;
+    transition: box-shadow 0.3s ease, border-color 0.3s ease;
+  }
+
+  .form-group input:focus,
+  .form-group select:focus {
+    box-shadow: 0 0 0 3px rgba(239, 233, 228, 0.3);
+    border-color: var(--accent-color);
+  }
+
+  .resumen-costos {
+    margin-top: 1.5rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--text-color);
+    transition: all 0.3s ease;
+  }
+
+  .submit-btn {
+    background-color: var(--accent-color);
+    color: var(--primary-color);
+    border: none;
+    padding: 0.8rem 1.5rem;
+    font-size: 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .submit-btn:hover {
+    background-color: #d4f4f4;
+    transform: translateY(-3px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    animation: pulse 0.8s infinite;
+  }
+
+  .submit-btn:active {
+    transform: translateY(1px);
+  }
+
+  /* Animaciones */
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+
+  @keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    10%, 30%, 50%, 70%, 90% { transform: translateX(-5px); }
+    20%, 40%, 60%, 80% { transform: translateX(5px); }
+  }
+
+  @keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+  }
+
+  .tour-detail:nth-child(1) { animation-delay: 0.1s; }
+  .tour-detail:nth-child(2) { animation-delay: 0.2s; }
+  .tour-detail:nth-child(3) { animation-delay: 0.3s; }
+  .tour-detail:nth-child(4) { animation-delay: 0.4s; }
+
+  @media (max-width: 768px) {
+    .reserva-container {
+      flex-direction: column;
+    }
+    
+    .tour-card, .reserva-form {
+      margin-right: 0;
+      margin-left: 0;
+      flex: none;
+      width: 100%;
+    }
+  }

@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>World Paradise Tours - Ushuaia</title>
+  <link rel="stylesheet" href="../src/css/index.css">
+  <link rel="stylesheet" href="/src/css/cuenta.css">
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script type="module" src="/js/Main.js" defer></script>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+
+<body>
+    
+  <div id="content-wrap">
+    <header>
+      <nav class="navbar">
+        <div class="logo">
+          <h1>World Paradise Tours</h1>
+        </div>
+        
+        <ul class="nav-links">
+          <li><a href="/index.html">Inicio</a></li>
+          <li class="dropdown">
+            <a href="#" class="dropbtn">Explorar <i class="fas fa-chevron-down"></i></a>
+            <div class="dropdown-content">
+              <a href="/Destinos.html">Tours</a>
+              <a href="#section4">Destinos</a>
+              <a href="#">Paquetes</a>
+              <a href="#">Paquetes personalizados</a>
+            </div>
+          </li>
+          <li><a href="#section5">Contacto</a></li>
+          <li class="dropdown">
+            <a href="#" class="dropbtn">Mi cuenta <i class="fas fa-chevron-down"></i></a>
+            <div class="dropdown-content">
+              <a href="/cuenta.html">Mi perfil</a>
+              <a href="/solicitudes.html">Mis solicitudes</a>
+              <a href="#" onclick="logOut()">Cerrar Sesion</a>
+            </div>
+          </li>
+          <li class="dropdown">
+            <a href="#" class="dropbtn">Idioma <i class="fas fa-chevron-down"></i></a>
+            <div class="dropdown-content">
+              <a href="#" data-lang="es">Español</a>
+              <a href="#" data-lang="en">English</a>
+              <a href="#" data-lang="pt">Português</a>
+            </div>
+          </li>
+          <li>
+            <a href="/carrito.html" class="cart-icon">
+              <i class="fas fa-shopping-cart"></i>
+              <span class="cart-count">0</span>
+            </a>
+          </li>
+          <li class="dropdown">
+            <a href="#" class="dropbtn currency-btn">USD <i class="fas fa-chevron-down"></i></a>
+            <div class="dropdown-content">
+              <a href="#" class="currency-option" data-currency="USD">USD</a>
+              <a href="#" class="currency-option" data-currency="ARS">ARS</a>
+              <a href="#" class="currency-option" data-currency="EUR">EUR</a>
+              <a href="#" class="currency-option" data-currency="BRL">BRL</a>
+            </div>
+          </li>
+        </ul>
+        
+        <div class="burger">
+          <div class="line1"></div>
+          <div class="line2"></div>
+          <div class="line3"></div>
+        </div>
+      </nav>
+    </header>
+  </div>
+
+      <main>
+        <section class="account-settings">
+          <div class="section account-settings">
+            <div class="container">
+              <h2>Mi Cuenta</h2>
+              <form id="accountForm">
+                <div class="form-group">
+                  <label for="nombres">Nombres:</label>
+                  <input type="text" id="nombres" name="nombres" disabled>
+                </div>
+                <div class="form-group">
+                  <label for="apellidos">Apellidos:</label>
+                  <input type="text" id="apellidos" name="apellidos" disabled>
+                </div>
+                <div class="form-group">
+                  <label for="email">Correo Electrónico:</label>
+                  <input type="email" id="email" name="email" disabled>
+                </div>
+                <div class="form-group">
+                  <label for="telefono">Número de Teléfono:</label>
+                  <input type="tel" id="telefono" name="telefono" disabled>
+                </div>
+                <div class="form-group">
+                  <label for="fechaNacimiento">Fecha de Nacimiento:</label>
+                  <input type="date" id="fechaNacimiento" name="fechaNacimiento" disabled>
+                </div>
+                <div class="form-group">
+                  <label for="sexo">Sexo:</label>
+                  <select id="sexo" name="sexo" disabled>
+                    <option value="M">Masculino</option>
+                    <option value="F">Femenino</option>
+                    <option value="O">Otro</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label for="pais">Pais:</label>
+                  <select id="pais" name="pais" disabled>
+                    <option value="Argentina">Argentina</option>
+                    <option value="Brasil">Brasil</option>
+                    <option value="Chile">Chile</option>
+                  </select>
+                </div>
+                <div class="form-group" id="cambioPasswordGroup" style="display: none;" required>
+                  <label for="passwordActual">Contraseña Actual:</label>
+                  <input type="password" id="passwordActual" name="passwordActual" required>
+                  <label for="nuevaPassword">Nueva Contraseña:</label>
+                  <input type="password" id="nuevaPassword" name="nuevaPassword" required>
+                  <label for="confirmarPassword">Confirmar Nueva Contraseña:</label>
+                  <input type="password" id="confirmarPassword" name="confirmarPassword">
+                </div>
+              </form>
+              <button id="btnCambiarInfo">Cambiar Información</button>
+              <button id="btnGuardarCambios" style="display: none;">Guardar Cambios</button>
+              <button id="btnDescartarCambios" style="display: none;">Descartar Cambios</button>
+              <button id="btnCambiarPassword">Cambiar Contraseña</button>
+            </div>
+          </div>
+        </section>
+    </main>
+
+      <footer>
+        <div class="footer-content">
+          <div class="footer-info">
+            <h3>World Paradise Tours</h3>
+            <p>Explora Argentina con el mejor acompañamiento</p>
+          </div>
+          <div class="footer-links">
+            <a href="#section1">Tours</a>
+            <a href="#section4">Destinos</a>
+            <a href="#section5">Contacto</a>
+          </div>
+        </div>
+        <div class="footer-copyright">
+          <p>Desarrollado por: <a href="https://www.linkedin.com/in/henry-nehuen-mesias-rios-41a756297">Nehuen Mesias</a></p>
+          <p>Todos los derechos reservados</p>
+        </div>
+      </footer>
+
+      <script type="module" src="/js/cuenta.js"></script>
+</body>
+
+
+
+
+
+</html>

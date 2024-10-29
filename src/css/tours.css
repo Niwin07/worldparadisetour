@@ -1,0 +1,340 @@
+.section.secciones-tours {
+    position: relative; /* Necesario para la superposición */
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+    padding: 40px;
+    overflow: hidden; /* Evita que el contenido se desborde */
+}
+
+.section.secciones-tours p {
+    background-color: rgba(255, 255, 255, 0.2); /* Fondo con mayor transparencia */
+    padding: 20px;
+    border-radius: 10px;
+  }
+
+.secciones-tours > div p {
+    font-size: 0.8em; /* ajusta el tamaño de la fuente */
+    max-width: 100%; /* limita el ancho del texto */
+  }
+.section.secciones-tours::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Oscurecemos la imagen */
+    z-index: 1; /* Mantiene la superposición por encima del fondo pero por debajo del contenido */
+}
+
+.section.secciones-tours * {
+    z-index: 2; /* Asegura que el contenido esté por encima de la superposición */
+}
+
+.image-container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 30px;
+    gap: 50px;
+}
+
+.image-container img {
+    width: 100%;
+    max-width: 400px;
+    height: 500px;
+    object-fit: cover;
+    border-radius: 15px; /* Bordes más redondeados */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Sombra más prominente */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.image-container img:hover {
+    transform: scale(1.07); /* Mayor ampliación al hacer hover */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4); /* Sombra más intensa al hacer hover */
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.9);
+}
+
+.modal-content {
+    margin: auto;
+    margin-top: 200px;
+    display: block;
+    width: 80%;
+    max-width: 800px;
+    height: 500px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(255,255,255,0.2);
+}
+
+.close {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+}
+/* Estilos para títulos */
+.titulo-tour {
+    font-size: 4em;
+    font-weight: 800;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #ffffff;
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.6); /* Sombra más pronunciada */
+    margin-bottom: 40px;
+    padding: 25px;
+    border-bottom: 3px solid rgba(255, 255, 255, 0.4);
+}
+
+.titulo-tour::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: -12px;
+    transform: translateX(-50%);
+    width: 70px;
+    height: 4px;
+    background-color: #ffffff;
+}
+
+#slogan {
+font-size: 1.5em;
+font-style: italic;
+margin-bottom: 30px;
+}
+
+
+
+/* .titulo-tour, .subtitulo, .mas-info-desc {
+    background-color: rgba(0, 0, 0, 0.6); /* Fondo oscuro semi-transparente */
+    /* padding: 15px 25px;
+    border-radius: 10px;
+    display: inline-block; */
+    /* text-shadow: none; Elimina la sombra para mejorar la claridad del texto */
+
+
+h2 {
+font-size: 2.5em;
+margin-bottom: 15px;
+text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+}
+
+/* Estilos para párrafos */
+p {
+font-size: 1.2em;
+line-height: 1.6;
+max-width: 800px;
+margin: 0 auto 15px;
+font-family: 'Roca Regular', sans-serif;
+}
+
+/* Estilos específicos para cada sección */
+.presentation {
+background-attachment: fixed;
+}
+
+.location, .difficulty, .more-info, .booking {
+background-color: rgba(0,0,0,0.5);
+}
+
+/* Mejoras para las imágenes en el contenedor */
+
+
+.subtitulo {
+    font-size: 2em;
+    color: rgba(255, 255, 255, 0.9);
+    text-transform: uppercase;
+    margin: 30px 0;
+    padding-bottom: 15px;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.4);
+}
+
+.subtitulo::after {
+content: '';
+position: absolute;
+bottom: 0;
+left: 50%;
+transform: translateX(-50%);
+width: 40px;
+height: 1px;
+background-color: rgba(255, 255, 255, 0.6);
+}
+
+
+/* Estilos para la sección de reserva */
+.booking p {
+font-weight: bold;
+}
+
+/* Mejoras para el modal */
+
+.close:hover {
+color: #bbb;
+text-decoration: none;
+cursor: pointer;
+}
+
+#recorrido{
+    position: absolute;
+    gap: 900px;
+}
+
+#recorrido-descripcion{
+    margin-top: 150px;
+    height: 1000px; 
+    width: 800px;
+}
+
+.recorrido-desc{
+    font-size: 1.3rem;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+.section.secciones-tours {
+    height: auto;
+    min-height: 100vh;
+}
+
+.image-container {
+    flex-direction: column;
+    align-items: center;
+}
+
+.image-container img {
+    width: 90%;
+    margin-bottom: 20px;
+}
+
+.titulo-tour {
+    font-size: 2.5em;
+}
+
+h2 {
+    font-size: 2em;
+}
+}
+#ubicacion{
+margin-left: 600px;
+}
+.ubicacion-desc{
+position: absolute;
+text-align: left;
+align-items: left;
+margin-right: 1000px;
+max-width: 500px;
+width: 100%;
+font-size: 25px;
+}
+
+#dificultad{
+    margin-right: 600px;
+}
+.dificultad-desc{
+    position: absolute;
+    text-align: center;
+    align-items: right;
+    margin-left: 1000px;
+    max-width: 500px;
+    width: 100%;
+    font-size: 25px;
+}
+
+.reserva{
+    text-align: center;
+    font-size: 1.5rem;
+    align-items: center;
+    width: 400px;
+}
+.reserva .botonmoderno-tours{
+    margin-top: 80px ;
+    font-size: 25px;
+
+}
+#mas-informacion{
+    gap: 800px;
+}
+
+.mas-info-desc {
+    position: absolute;
+    font-size: 1.5rem;
+    width: 400px;
+}
+
+
+#masinfo{
+    position: absolute;
+    margin-bottom: 340px;
+}
+.image-subtitle-wrapper {
+    display: inline-block;
+    vertical-align: top;
+    width: 45%; /* Ajusta según sea necesario */
+    margin: 0 2.5%;
+}
+
+.image-subtitle-wrapper img {
+    width: 120%;
+    height: 350px;
+    object-fit: cover;
+    object-position: center;
+}
+
+.sub-desc {
+    margin-top: 15px;
+    margin-left: 40px;
+    text-align: center;
+    font-size: 1.4em;
+    color: #ffffff;
+    font-weight: 500;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    padding: 10px 15px;
+    background-color: rgba(0, 0, 0, 0.6);
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+}
+
+.image-subtitle-wrapper:hover .sub-desc {
+    background-color: rgba(0, 0, 0, 0.8);
+    transform: translateY(-5px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+}
+
+/* Estilos responsive */
+@media (max-width: 768px) {
+    .section.secciones-tours {
+        padding: 20px;
+        text-align: center;
+    }
+
+    .image-container {
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+    }
+
+    .titulo-tour {
+        font-size: 3em;
+    }
+}

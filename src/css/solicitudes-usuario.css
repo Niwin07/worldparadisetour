@@ -1,0 +1,178 @@
+:root {
+  --primary-color: #151a21;
+  --text-color: #b2afac;
+  --boton-color: #efe9e4;
+  --accent-color: #efffff;
+  --transition: all 0.3s ease-in-out;
+}
+
+body {
+  font-family: "Arial", sans-serif;
+  background-color: var(--primary-color);
+  color: var(--text-color);
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+}
+
+h1,
+h2,
+h3 {
+  font-family: "Anton", sans-serif;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--accent-color);
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+.dashboard {
+  background-color: rgba(255, 255, 255, 0.05);
+  border-radius: 15px;
+  padding: 30px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  margin-top: -500px;
+}
+
+#reservations {
+  display: flex;
+  flex-wrap: wrap; /* Permite que las tarjetas se ajusten en filas si no caben en una sola */
+  margin-top: 30px;
+  gap: 5px;
+  justify-content: space-between; /* Distribuye las tarjetas uniformemente */
+}
+
+.card {
+  flex: 1 1 300px; /* Se ajustan a un tamaño mínimo de 300px y se expanden según el espacio disponible */
+  max-width: 400px; /* Limita el ancho máximo */
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  padding: 10px;
+  transition: var(--transition);
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+}
+
+.card h3 {
+  margin-top: 0;
+  font-size: 1.2em;
+}
+
+.status-container {
+  display: flex;
+  align-items: center;
+  gap: 10px; /* Espacio entre la pelotita y el texto */
+}
+
+.status-indicator {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+}
+
+.status-confirmada {
+  background-color: #4caf50; /* Verde para aprobado */
+}
+
+.status-pendiente {
+  background-color: #ffc107; /* Amarillo para pendiente */
+}
+
+.status-cancelada {
+  background-color: #f44336; /* Rojo para cancelado */
+}
+
+.status-text {
+  font-size: 0.9em;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+#reservation-details {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: var(--primary-color);
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+  z-index: 1000;
+  max-width: 600px;
+  width: 90%;
+  max-height: 80vh;
+  overflow-y: auto;
+}
+
+#reservation-details h2 {
+  margin-top: 0;
+}
+
+.close-btn {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: none;
+  border: none;
+  font-size: 1.5em;
+  color: var(--text-color);
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.close-btn:hover {
+  color: var(--accent-color);
+}
+
+.tour-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+.tour-item {
+  background-color: rgba(255, 255, 255, 0.05);
+  margin-bottom: 15px;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 999;
+}
+
+.btn {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: var(--transition);
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 0.9em;
+}
+
+.btn-primary {
+  background-color: var(--boton-color);
+  color: var(--primary-color);
+}
+
+.btn-primary:hover {
+  background-color: var(--accent-color);
+}

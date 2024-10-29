@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estado de Solicitudes - World Paradise Tours</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../src/css/index.css">
+    <link rel="stylesheet" href="../src/css/solicitudes-usuario.css">
+
+    <script type="module" src="../js/Main.js" defer></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+<body>
+  <div id="content-wrap">
+    <header>
+      <nav class="navbar">
+        <div class="logo">
+          <h1>World Paradise Tours</h1>
+        </div>
+        
+        <ul class="nav-links">
+          <li><a href="/index.html">Inicio</a></li>
+          <li class="dropdown">
+            <a href="#" class="dropbtn">Explorar <i class="fas fa-chevron-down"></i></a>
+            <div class="dropdown-content">
+              <a href="/Destinos.html">Tours</a>
+              <a href="#section4">Destinos</a>
+              <a href="#">Paquetes</a>
+              <a href="#">Paquetes personalizados</a>
+            </div>
+          </li>
+          <li><a href="#section5">Contacto</a></li>
+          <li class="dropdown">
+            <a href="#" class="dropbtn">Mi cuenta <i class="fas fa-chevron-down"></i></a>
+            <div class="dropdown-content">
+              <a href="/cuenta.html">Mi perfil</a>
+              <a href="/solicitudes.html">Mis solicitudes</a>
+              <a href="#" onclick="logOut()">Cerrar Sesion</a>
+            </div>
+          </li>
+          <li class="dropdown">
+            <a href="#" class="dropbtn">Idioma <i class="fas fa-chevron-down"></i></a>
+            <div class="dropdown-content">
+              <a href="#" data-lang="es">Español</a>
+              <a href="#" data-lang="en">English</a>
+              <a href="#" data-lang="pt">Português</a>
+            </div>
+          </li>
+          <li>
+            <a href="/carrito.html" class="cart-icon">
+              <i class="fas fa-shopping-cart"></i>
+              <span class="cart-count">0</span>
+            </a>
+          </li>
+          <li class="dropdown">
+            <a href="#" class="dropbtn currency-btn">USD <i class="fas fa-chevron-down"></i></a>
+            <div class="dropdown-content">
+              <a href="#" class="currency-option" data-currency="USD">USD</a>
+              <a href="#" class="currency-option" data-currency="ARS">ARS</a>
+              <a href="#" class="currency-option" data-currency="EUR">EUR</a>
+              <a href="#" class="currency-option" data-currency="BRL">BRL</a>
+            </div>
+          </li>
+        </ul>
+        
+        <div class="burger">
+          <div class="line1"></div>
+          <div class="line2"></div>
+          <div class="line3"></div>
+        </div>
+      </nav>
+    </header>
+  </div>
+
+
+    <main>
+        <div class="container">
+            <div class="dashboard">
+                <h1>Estado de Solicitudes</h1>
+                <div id="reservations">
+                    <!-- Las reservas se insertarán aquí dinámicamente -->
+                </div>
+            </div>
+        </div>
+    
+        <div id="overlay" class="overlay" style="display: none;"></div>
+        <div id="reservation-details" style="display: none;">
+            <button class="close-btn" onclick="closeDetails()">&times;</button>
+            <div id="details-content">
+                <!-- El contenido del detalle se insertará aquí -->
+            </div>
+        </div>
+    </main>
+
+    
+
+    <footer>
+        <div class="footer-content">
+          <div class="footer-info">
+            <h3>World Paradise Tours</h3>
+            <p>Explora Argentina con el mejor acompañamiento</p>
+          </div>
+          <div class="footer-links">
+            <a href="#section1">Tours</a>
+            <a href="#section4">Destinos</a>
+            <a href="#section5">Contacto</a>
+          </div>
+          <a href="http://qr.afip.gob.ar/?qr=Mwgep1YitRizNXo36eExrw,," target="_F960AFIPInfo"><img src="http://www.afip.gob.ar/images/f960/DATAWEB.jpg" border="0" alt="logo-afip"></a>
+        </div>
+        <div class="footer-copyright">
+          <p>Desarrollado por: <a href="https://www.linkedin.com/in/henry-nehuen-mesias-rios-41a756297">Nehuen Mesias</a></p>
+          <p>Todos los derechos reservados</p>
+        </div>
+      </footer>
+
+    <!-- Tu contenido de pie de página existente aquí -->
+
+    
+    <script src="/js/solicitudes.js"></script>
+</body>
+</html>
